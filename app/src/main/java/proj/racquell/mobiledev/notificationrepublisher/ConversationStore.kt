@@ -1,5 +1,7 @@
+package proj.racquell.mobiledev.notificationrepublisher
+
 object ConversationStore {
-    private val map = LinkedHashMap<String, ArrayDeque<String>>() // newest first
+    private val map = LinkedHashMap<String, ArrayDeque<String>>() // newest at front
 
     fun add(conversationId: String, msg: String, max: Int = 8): List<String> {
         val dq = map.getOrPut(conversationId) { ArrayDeque() }
